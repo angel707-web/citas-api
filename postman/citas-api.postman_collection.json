@@ -1,0 +1,521 @@
+{
+  "info": {
+    "_postman_id": "b5afbcd6-3918-4027-9f07-27ff803aaac4",
+    "name": "citas-api",
+    "description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "57638715",
+    "_collection_link": "https://go.postman.co/collection/57638715-b5afbcd6-3918-4027-9f07-27ff803aaac4?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Login gerente",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\": \"gerente@terapias.pe\",\r\n\"password\": \"Clave123\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/api/auth/login",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login admin",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\": \"admin@terapias.pe\",\r\n\"password\": \"Clave123\"}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/api/auth/login",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login contraseña incorrecta",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\": \"gerente@terapias.pe\",\r\n\"password\": \"otra\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/api/auth/login",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login correo que no existe",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\": \"nadie@terapias.pe\",\r\n\"password\": \"Clave123\"}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/api/auth/login",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login usuario inactivo",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\":\r\n\"diego.ramirez@terapias.pe\",\r\n\"password\": \"Clave123\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/api/auth/login",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login rol no permitido (cliente)",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\":\r\n\"ana.quispe@correo.com\",\r\n\"password\": \"Clave123\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/api/auth/login",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login sin datos",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\": \"\", \"password\": \"\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/api/auth/login",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Servicios: listar",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}/api/servicios",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "servicios"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Servicios: activos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}/api/servicios/activos",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "servicios",
+            "activos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Servicios: buscar por título",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}/api/servicios/buscar?titulo=Fisioterapia",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "servicios",
+            "buscar"
+          ],
+          "query": [
+            {
+              "key": "titulo",
+              "value": "Fisioterapia"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Servicios: obtener 1",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}/api/servicios/1",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "servicios",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Servicios: obtener 999",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}/api/servicios/999",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "servicios",
+            "999"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Servicios: crear",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"titulo\": \"Reflexología\",\r\n\"descripcion\": \"Masaje en puntos de los pies\",\r\n\"costo\": 85.0,\r\n\"duracion\": 40, \"foto\": null,\r\n\"activo\": true}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/api/servicios",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "servicios"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Servicios: crear título repetido",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"titulo\": \"Reflexología\",\r\n\"descripcion\": \"Masaje en puntos de los pies\", \"costo\": 85.0,\r\n\"duracion\": 40, \"foto\": null,\r\n\"activo\": true}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/api/servicios",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "servicios"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Servicios: crear con datos inválidos",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"titulo\": \"\", \"costo\": -5,\r\n\"duracion\": 5}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/api/servicios",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "servicios"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Servicios: actualizar el creado",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"titulo\":\"Reflexología Actualizada reciente\",\"descripcion\":\"Masaje en puntos de los pies\",\"costo\":90,\"duracion\":40,\"foto\":null,\"activo\":false}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/api/servicios/1",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "servicios",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Servicios: actualizar 999",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"titulo\":\"Reflexología Actualizada\",\"descripcion\":\"Masaje en puntos de los pies\",\"costo\":85,\"duracion\":40,\"foto\":null,\"activo\":true}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/api/servicios/999",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "servicios",
+            "999"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Servicios: eliminar 1 (está en uso)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}/api/servicios/1",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "servicios",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Servicios: eliminar el creado",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/api/servicios/9",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "servicios",
+            "9"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Servicios: eliminar otra vez",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}/api/servicios/9",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "servicios",
+            "9"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseURL",
+      "value": ""
+    },
+    {
+      "key": "codeSpace",
+      "value": ""
+    }
+  ]
+}
